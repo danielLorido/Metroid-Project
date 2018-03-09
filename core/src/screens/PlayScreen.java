@@ -66,10 +66,10 @@ public class PlayScreen implements Screen {
 
 		// MUSICA
 
-		// music = SuperMetroid.manager.get("assets/musica/fondoDos.mp3", Music.class);
-		// music.setLooping(true);
-		// music.setVolume(0.3f);
-		// music.play();
+		music = Gdx.audio.newMusic(Gdx.files.internal("musica/fondoUno.mp3"));
+		music.setLooping(true);
+		music.setVolume(0.3f);
+		music.play();
 	}
 
 	@Override
@@ -86,9 +86,9 @@ public class PlayScreen implements Screen {
 		}
 		if (Gdx.input.isKeyPressed(Input.Keys.A) && player.b2body.getLinearVelocity().x >= -2) {
 			player.b2body.applyLinearImpulse(new Vector2(-0.1f, 0), player.b2body.getWorldCenter(), true);
-			
+
 		}
-		
+
 	}
 
 	private void update(float delta) {
